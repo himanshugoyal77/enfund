@@ -32,10 +32,10 @@ six
 sqlparse
 tomli
 Twisted
-twisted-iocpsupport
 txaio
 typing_extensions
 tzdata
 zope.interface
 crispy-bootstrap4
 django-bootstrap4
+django-cors-headers

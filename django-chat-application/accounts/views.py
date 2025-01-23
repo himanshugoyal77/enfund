@@ -8,6 +8,7 @@ from django.contrib.auth import login
 from django.views.generic import UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
+from django.contrib.auth import logout
 # Create your views here.
 
 
@@ -47,3 +48,8 @@ class UpdateUserInfoView(LoginRequiredMixin, UpdateView):
 
     def get_queryset(self):
         return super().get_queryset().filter(id=self.request.user.id)
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('home')

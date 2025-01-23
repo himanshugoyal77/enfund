@@ -1,8 +1,8 @@
 // Global => ScrollToBottom, getMessagHtmlText, host
 
-const wsprotocol = host === "https" ? "wss" : "ws";
+const wsprotocol = host.includes("localhost") ? "ws" : "wss";
 const groupId = document.getElementById("group_id").value;
-const websocketurl = `ws://${host}/ws/chat/${groupId}/`;
+const websocketurl = `${wsprotocol}://${host}/ws/chat/${groupId}/`;
 const userId = document.querySelector("#id-user-id").value;
 const retryFrequency = 1600; // Unit -> milliseconds
 let CONNECTED_TO_SERVER = false;
